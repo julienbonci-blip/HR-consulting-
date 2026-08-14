@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function FinalCta() {
   return (
     <section id="contact" className="bg-olive text-paper">
@@ -10,18 +12,13 @@ export function FinalCta() {
         </p>
 
         <div className="mt-9 flex justify-center">
-          {/*
-            Emplacement prévu pour le futur formulaire qualifié
-            Particulier / Professionnel. À remplacer par un lien
-            ou une action réelle dès sa mise en ligne.
-          */}
-          <button
-            type="button"
+          <Link
+            href="#etudier-mon-projet"
             className="inline-flex items-center gap-2 rounded-md bg-paper px-7 py-3.5 text-sm font-semibold text-ink transition-colors hover:bg-mineral"
           >
             Étudier mon projet
             <span aria-hidden="true">→</span>
-          </button>
+          </Link>
         </div>
       </div>
     </section>

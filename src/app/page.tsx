@@ -5,6 +5,7 @@ import { Method } from "@/components/sections/method";
 import { Transformation } from "@/components/sections/transformation";
 import { Audiences } from "@/components/sections/audiences";
 import { EditorialBreak } from "@/components/sections/editorial-break";
+import { ProjectFormSection } from "@/components/sections/project-form-section";
 import { FinalCta } from "@/components/sections/final-cta";
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       <Transformation />
       <Audiences />
       <EditorialBreak />
+      <ProjectFormSection />
       <FinalCta />
     </>
   );

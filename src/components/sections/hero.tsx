@@ -23,7 +23,7 @@ export function Hero() {
 
           <div className="mt-9">
             <Link
-              href="#contact"
+              href="#etudier-mon-projet"
               className="inline-flex items-center gap-2 rounded-md bg-olive px-6 py-3.5 text-sm font-medium text-paper transition-colors hover:bg-olive-dark"
             >
               Étudier mon projet
