@@ -34,11 +34,11 @@ export function Hero() {
 
         <div className="relative h-[380px] overflow-hidden rounded-md sm:h-[480px] lg:h-auto">
           <Image
-            src="/reference/kern-photos/01_hero_architecture_exterieur.jpg"
-            alt="Architecture contemporaine avec vue sur le paysage"
+            src="/KERN_photos_v2/01_hero_villa_terrasse.png"
+            alt="Villa contemporaine en terrasse avec vue sur le territoire"
             fill
             sizes="(min-width: 1024px) 53vw, 100vw"
-            className="object-cover"
+            className="object-cover object-[50%_42%]"
             preload
           />
         </div>

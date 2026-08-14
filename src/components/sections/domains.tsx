@@ -18,11 +18,11 @@ export function Domains() {
           <div>
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-md">
               <Image
-                src="/reference/kern-photos/02_vue_aerienne_territoire.jpg"
-                alt="Vue aérienne d'un territoire à fort potentiel foncier"
+                src="/KERN_photos_v2/02_terrain_aerien.png"
+                alt="Vue aérienne d'une réserve de terrain à fort potentiel foncier"
                 fill
                 sizes="(min-width: 640px) 50vw, 100vw"
-                className="object-cover object-[center_60%]"
+                className="object-cover"
               />
             </div>
             <div className="mt-6">
@@ -42,8 +42,8 @@ export function Domains() {
           <div>
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-md">
               <Image
-                src="/reference/kern-photos/07_facade_immeuble_ancien.jpg"
-                alt="Façade d'un immeuble ancien à restructurer"
+                src="/KERN_photos_v2/07_bati_existant_facade.png"
+                alt="Façade d'un immeuble existant à restructurer"
                 fill
                 sizes="(min-width: 640px) 50vw, 100vw"
                 className="object-cover"
@@ -66,8 +66,8 @@ export function Domains() {
           <div>
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-md">
               <Image
-                src="/reference/kern-photos/09_commerce_rdc_vitrine.jpg"
-                alt="Vitrine d'un commerce en rez-de-chaussée"
+                src="/KERN_photos_v2/08_commerce_rdc_vitrine.png"
+                alt="Vitrine d'un commerce en rez-de-chaussée à réinventer"
                 fill
                 sizes="(min-width: 640px) 50vw, 100vw"
                 className="object-cover"
@@ -90,11 +90,11 @@ export function Domains() {
           <div>
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-md">
               <Image
-                src="/reference/kern-photos/04_batiment_residentiel_contemporain.jpg"
-                alt="Bâtiment résidentiel contemporain"
+                src="/KERN_photos_v2/04_projet_immobilier_residentiel.png"
+                alt="Bâtiment résidentiel contemporain, opération immobilière"
                 fill
                 sizes="(min-width: 640px) 50vw, 100vw"
-                className="object-cover object-[center_30%]"
+                className="object-cover"
               />
             </div>
             <div className="mt-6">

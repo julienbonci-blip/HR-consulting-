@@ -51,13 +51,13 @@ export function Transformation() {
           </div>
         </div>
 
-        <div className="relative h-[360px] overflow-hidden rounded-md sm:h-[460px] lg:h-auto">
+        <div className="relative aspect-[4/3] overflow-hidden rounded-md lg:aspect-auto lg:h-auto">
           <Image
-            src="/reference/kern-photos/10_interieur_amenagement.jpg"
-            alt="Aménagement intérieur chaleureux et architectural"
+            src="/KERN_photos_v2/06_interieur_amenagement_lobby.png"
+            alt="Aménagement intérieur d'un hall, transformation architecturale"
             fill
             sizes="(min-width: 1024px) 52vw, 100vw"
-            className="object-cover object-[center_35%]"
+            className="object-cover"
           />
         </div>
       </div>

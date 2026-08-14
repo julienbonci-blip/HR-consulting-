@@ -5,10 +5,10 @@ export function EditorialBreak() {
   return (
     <div className="border-b border-mineral bg-paper">
       <div className="mx-auto flex max-w-[1400px] flex-col gap-8 px-6 py-20 sm:px-10 sm:py-28 lg:flex-row lg:items-start lg:gap-10">
-        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-md lg:aspect-[6/5] lg:w-[65%]">
+        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-md lg:w-[65%]">
           <Image
-            src="/reference/kern-photos/08_terrasse_vegetalisee.jpg"
-            alt="Terrasse végétalisée d'un immeuble contemporain"
+            src="/KERN_photos_v2/09_immeuble_vegetalise.png"
+            alt="Immeuble contemporain végétalisé, actif valorisé"
             fill
             sizes="(min-width: 1024px) 65vw, 100vw"
             className="object-cover"

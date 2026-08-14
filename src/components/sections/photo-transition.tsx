@@ -6,17 +6,17 @@ export function PhotoTransition() {
       <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-8 px-6 py-20 sm:px-10 sm:py-28 lg:grid-cols-12 lg:gap-6">
         <div className="relative aspect-[4/3] w-full overflow-hidden rounded-md lg:col-span-7">
           <Image
-            src="/reference/kern-photos/02_vue_aerienne_territoire.jpg"
-            alt="Vue aérienne d'un territoire, foncier et potentiel d'un site"
+            src="/KERN_photos_v2/10_panorama_territoire_ville.png"
+            alt="Panorama d'une ville et de son territoire"
             fill
             sizes="(min-width: 1024px) 58vw, 100vw"
-            className="object-cover object-[center_38%]"
+            className="object-cover"
           />
         </div>
 
-        <div className="relative aspect-[4/5] w-full overflow-hidden rounded-md lg:col-span-4 lg:col-start-9">
+        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-md lg:col-span-4 lg:col-start-9">
           <Image
-            src="/reference/kern-photos/03_restaurant_hospitality_interieur.jpg"
+            src="/KERN_photos_v2/03_restaurant_hospitality.png"
             alt="Intérieur transformé, ambiance hospitality"
             fill
             sizes="(min-width: 1024px) 33vw, 100vw"
