@@ -53,11 +53,11 @@ export function Transformation() {
 
         <div className="relative h-[360px] overflow-hidden rounded-md sm:h-[460px] lg:h-auto">
           <Image
-            src="/reference/kern-photos/03_restaurant_hospitality_interieur.jpg"
-            alt="Intérieur d'un restaurant transformé, ambiance hospitality"
+            src="/reference/kern-photos/10_interieur_amenagement.jpg"
+            alt="Aménagement intérieur chaleureux et architectural"
             fill
             sizes="(min-width: 1024px) 52vw, 100vw"
-            className="object-cover"
+            className="object-cover object-[center_35%]"
           />
         </div>
       </div>

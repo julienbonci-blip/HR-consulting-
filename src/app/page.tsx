@@ -1,5 +1,5 @@
 import { Hero } from "@/components/sections/hero";
-import { PhotoStrip } from "@/components/sections/photo-strip";
+import { PhotoTransition } from "@/components/sections/photo-transition";
 import { Domains } from "@/components/sections/domains";
 import { Method } from "@/components/sections/method";
 import { Transformation } from "@/components/sections/transformation";
@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <PhotoStrip />
+      <PhotoTransition />
       <Domains />
       <Method />
       <Transformation />
