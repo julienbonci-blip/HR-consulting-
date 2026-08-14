@@ -15,10 +15,13 @@ export function SiteFooter() {
       <div className="mx-auto max-w-[1400px] px-6 py-16 sm:px-10">
         <div className="grid grid-cols-1 gap-12 border-b border-line-on-charcoal pb-12 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <p className="font-display text-xl font-medium tracking-tight text-on-charcoal">
-              HR Consulting
+            <p className="font-display text-2xl font-bold tracking-tight text-on-charcoal">
+              KERN
             </p>
-            <p className="mt-3 max-w-[26ch] text-sm leading-relaxed text-on-charcoal-soft">
+            <p className="mt-2 text-xs font-medium uppercase tracking-[0.18em] text-bronze">
+              Cabinet de stratégie immobilière
+            </p>
+            <p className="mt-4 max-w-[26ch] text-sm leading-relaxed text-on-charcoal-soft">
               Conseil &amp; valorisation foncière.
             </p>
           </div>
@@ -60,7 +63,7 @@ export function SiteFooter() {
         </div>
 
         <p className="pt-8 text-xs text-on-charcoal-soft/70">
-          © {new Date().getFullYear()} HR Consulting. Tous droits réservés.
+          © {new Date().getFullYear()} KERN. Tous droits réservés.
         </p>
       </div>
     </footer>

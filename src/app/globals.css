@@ -1,20 +1,22 @@
 @import "tailwindcss";
 
 :root {
-  --color-paper: #f6f3ec;
-  --color-paper-dim: #efeade;
-  --color-ink: #17160f;
-  --color-ink-soft: #4a463c;
-  --color-ink-faint: #837d6c;
-  --color-line: rgba(23, 22, 15, 0.14);
-  --color-line-soft: rgba(23, 22, 15, 0.08);
-  --color-clay: #a6512f;
-  --color-clay-dark: #863e21;
-  --color-charcoal: #17160f;
-  --color-charcoal-soft: #232019;
-  --color-on-charcoal: #f2ede1;
-  --color-on-charcoal-soft: #b3ab98;
-  --color-line-on-charcoal: rgba(242, 237, 225, 0.16);
+  --color-paper: #f7f5f1;
+  --color-paper-dim: #dad8d2;
+  --color-ink: #1d1d1b;
+  --color-ink-soft: #4a4944;
+  --color-ink-faint: #86837a;
+  --color-line: rgba(29, 29, 27, 0.14);
+  --color-line-soft: rgba(29, 29, 27, 0.08);
+  --color-olive: #5e6958;
+  --color-olive-dark: #4b5447;
+  --color-bronze: #a78963;
+  --color-mineral: #dad8d2;
+  --color-charcoal: #1d1d1b;
+  --color-charcoal-soft: #2a2a26;
+  --color-on-charcoal: #f7f5f1;
+  --color-on-charcoal-soft: #c7c4bb;
+  --color-line-on-charcoal: rgba(247, 245, 241, 0.16);
 }
 
 @theme inline {
@@ -25,15 +27,17 @@
   --color-ink-faint: var(--color-ink-faint);
   --color-line: var(--color-line);
   --color-line-soft: var(--color-line-soft);
-  --color-clay: var(--color-clay);
-  --color-clay-dark: var(--color-clay-dark);
+  --color-olive: var(--color-olive);
+  --color-olive-dark: var(--color-olive-dark);
+  --color-bronze: var(--color-bronze);
+  --color-mineral: var(--color-mineral);
   --color-charcoal: var(--color-charcoal);
   --color-charcoal-soft: var(--color-charcoal-soft);
   --color-on-charcoal: var(--color-on-charcoal);
   --color-on-charcoal-soft: var(--color-on-charcoal-soft);
   --color-line-on-charcoal: var(--color-line-on-charcoal);
   --font-sans: var(--font-geist-sans);
-  --font-display: var(--font-fraunces);
+  --font-display: var(--font-archivo);
 }
 
 html {
@@ -52,6 +56,6 @@ div[id] {
 }
 
 ::selection {
-  background: var(--color-clay);
+  background: var(--color-olive);
   color: var(--color-paper);
 }

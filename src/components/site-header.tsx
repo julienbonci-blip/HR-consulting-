@@ -16,25 +16,22 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-paper/90 backdrop-blur">
-      <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-6 px-6 py-4 sm:px-10">
+    <header className="sticky top-0 z-50 border-b border-line bg-paper/95 backdrop-blur">
+      <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-6 px-6 py-5 sm:px-10">
         <Link
           href="#accueil"
           onClick={() => setOpen(false)}
-          className="font-display text-lg font-medium tracking-tight text-ink"
+          className="font-display text-xl font-bold tracking-tight text-ink"
         >
-          HR Consulting
-          <span className="ml-2 hidden text-xs font-sans font-normal uppercase tracking-[0.18em] text-ink-faint sm:inline">
-            Conseil &amp; valorisation foncière
-          </span>
+          KERN
         </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex">
+        <nav className="hidden items-center gap-9 lg:flex">
           {NAV_ITEMS.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm text-ink-soft transition-colors hover:text-ink"
+              className="text-[13px] text-ink-soft transition-colors hover:text-ink"
             >
               {item.label}
             </Link>
@@ -43,7 +40,7 @@ export function SiteHeader() {
 
         <Link
           href="#contact"
-          className="hidden shrink-0 items-center rounded-full bg-ink px-5 py-2.5 text-sm font-medium text-paper transition-colors hover:bg-clay lg:inline-flex"
+          className="hidden shrink-0 items-center rounded-full bg-olive px-6 py-2.5 text-sm font-medium text-paper transition-colors hover:bg-olive-dark lg:inline-flex"
         >
           Étudier mon projet
         </Link>
@@ -83,7 +80,7 @@ export function SiteHeader() {
           <Link
             href="#contact"
             onClick={() => setOpen(false)}
-            className="mt-4 inline-flex items-center justify-center rounded-full bg-ink px-5 py-3 text-sm font-medium text-paper transition-colors hover:bg-clay"
+            className="mt-4 inline-flex items-center justify-center rounded-full bg-olive px-5 py-3 text-sm font-medium text-paper transition-colors hover:bg-olive-dark"
           >
             Étudier mon projet
           </Link>
