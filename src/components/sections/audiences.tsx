@@ -18,58 +18,56 @@ const PROFESSIONALS = [
 
 export function Audiences() {
   return (
-    <section id="professionnels" className="border-b border-line">
-      <div className="mx-auto max-w-[1400px] px-6 py-20 sm:px-10 sm:py-28">
-        <div className="flex items-center gap-3 text-xs font-medium uppercase tracking-[0.2em] text-ink-faint">
-          <span className="h-px w-8 bg-olive" />
-          Pour qui
+    <section id="professionnels" className="border-b border-mineral">
+      <div className="grid grid-cols-1 lg:grid-cols-2">
+        <div className="bg-paper px-6 py-20 sm:px-10 sm:py-28 lg:pr-14 lg:pl-10 xl:pl-[max(2.5rem,calc((100vw-1400px)/2))]">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-bronze">
+            Particuliers
+          </span>
+          <h2 className="mt-4 max-w-[22ch] font-display text-[34px] font-extrabold leading-[1.05] tracking-[-0.025em] text-ink sm:text-4xl">
+            Révéler le potentiel d&apos;un bien
+          </h2>
+          <p className="mt-4 max-w-[36ch] text-[17px] leading-relaxed text-ink-soft">
+            Avant de construire, diviser ou transformer.
+          </p>
+          <ul className="mt-10 flex flex-col">
+            {INDIVIDUALS.map((item, index) => (
+              <li
+                key={item}
+                className="flex items-center gap-4 border-t border-mineral py-4 text-lg font-medium text-ink first:border-t-0 first:pt-0"
+              >
+                <span className="font-display text-sm font-bold text-bronze">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
-        <h2 className="mt-6 max-w-[24ch] font-display text-3xl font-bold leading-tight tracking-tight text-ink sm:text-4xl lg:text-5xl">
-          Particuliers &amp; professionnels
-        </h2>
 
-        <div className="mt-14 grid grid-cols-1 lg:grid-cols-2 lg:divide-x lg:divide-line">
-          <div className="border-t border-line pt-8 lg:pr-12 lg:pt-10">
-            <span className="font-display text-xs font-bold uppercase tracking-[0.2em] text-bronze">
-              Particuliers
-            </span>
-            <p className="mt-3 max-w-[36ch] text-base leading-relaxed text-ink-soft">
-              Révéler le potentiel d&apos;un bien, avant de construire,
-              diviser ou transformer.
-            </p>
-            <ul className="mt-8 flex flex-col gap-4">
-              {INDIVIDUALS.map((item) => (
-                <li
-                  key={item}
-                  className="flex items-center gap-4 border-t border-line-soft pt-4 text-lg font-medium text-ink first:border-t-0 first:pt-0"
-                >
-                  <span className="h-px w-5 bg-olive" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="border-t border-line pt-8 lg:pl-12 lg:pt-10">
-            <span className="font-display text-xs font-bold uppercase tracking-[0.2em] text-bronze">
-              Professionnels
-            </span>
-            <p className="mt-3 max-w-[36ch] text-base leading-relaxed text-ink-soft">
-              Sécuriser la faisabilité et la valeur d&apos;un actif, de
-              l&apos;arbitrage à la transformation.
-            </p>
-            <ul className="mt-8 flex flex-col gap-4">
-              {PROFESSIONALS.map((item) => (
-                <li
-                  key={item}
-                  className="flex items-center gap-4 border-t border-line-soft pt-4 text-lg font-medium text-ink first:border-t-0 first:pt-0"
-                >
-                  <span className="h-px w-5 bg-olive" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className="bg-olive px-6 py-20 text-paper sm:px-10 sm:py-28 lg:pl-14 lg:pr-10 xl:pr-[max(2.5rem,calc((100vw-1400px)/2))]">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-paper/70">
+            Professionnels
+          </span>
+          <h2 className="mt-4 max-w-[22ch] font-display text-[34px] font-extrabold leading-[1.05] tracking-[-0.025em] text-paper sm:text-4xl">
+            Sécuriser la valeur d&apos;un actif
+          </h2>
+          <p className="mt-4 max-w-[36ch] text-[17px] leading-relaxed text-paper/80">
+            De l&apos;arbitrage à la transformation, avant tout engagement.
+          </p>
+          <ul className="mt-10 flex flex-col">
+            {PROFESSIONALS.map((item, index) => (
+              <li
+                key={item}
+                className="flex items-center gap-4 border-t border-paper/20 py-4 text-lg font-medium text-paper first:border-t-0 first:pt-0"
+              >
+                <span className="font-display text-sm font-bold text-paper/70">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

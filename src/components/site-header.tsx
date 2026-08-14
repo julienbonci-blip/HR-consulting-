@@ -16,17 +16,17 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-paper/95 backdrop-blur">
-      <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-6 px-6 py-5 sm:px-10">
+    <header className="sticky top-0 z-50 border-b border-mineral bg-paper/95 backdrop-blur">
+      <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-6 px-6 py-4 sm:px-10">
         <Link
           href="#accueil"
           onClick={() => setOpen(false)}
-          className="font-display text-xl font-bold tracking-tight text-ink"
+          className="font-display text-xl font-extrabold tracking-tight text-ink"
         >
           KERN
         </Link>
 
-        <nav className="hidden items-center gap-9 lg:flex">
+        <nav className="hidden items-center gap-8 lg:flex">
           {NAV_ITEMS.map((item) => (
             <Link
               key={item.href}
@@ -40,7 +40,7 @@ export function SiteHeader() {
 
         <Link
           href="#contact"
-          className="hidden shrink-0 items-center rounded-full bg-olive px-6 py-2.5 text-sm font-medium text-paper transition-colors hover:bg-olive-dark lg:inline-flex"
+          className="hidden shrink-0 items-center rounded-md bg-olive px-5 py-2.5 text-sm font-medium text-paper transition-colors hover:bg-olive-dark lg:inline-flex"
         >
           Étudier mon projet
         </Link>
@@ -65,7 +65,7 @@ export function SiteHeader() {
       {open && (
         <nav
           id="mobile-nav"
-          className="flex flex-col gap-1 border-t border-line bg-paper px-6 pb-6 pt-2 lg:hidden"
+          className="flex flex-col gap-1 border-t border-mineral bg-paper px-6 pb-6 pt-2 lg:hidden"
         >
           {NAV_ITEMS.map((item) => (
             <Link
@@ -80,7 +80,7 @@ export function SiteHeader() {
           <Link
             href="#contact"
             onClick={() => setOpen(false)}
-            className="mt-4 inline-flex items-center justify-center rounded-full bg-olive px-5 py-3 text-sm font-medium text-paper transition-colors hover:bg-olive-dark"
+            className="mt-4 inline-flex items-center justify-center rounded-md bg-olive px-5 py-3 text-sm font-medium text-paper transition-colors hover:bg-olive-dark"
           >
             Étudier mon projet
           </Link>
