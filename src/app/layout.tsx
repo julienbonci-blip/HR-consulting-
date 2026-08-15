@@ -17,21 +17,33 @@ const archivo = Archivo({
 });
 
 const siteName = "KERN";
+const siteUrl = "https://kernstrategieimmo.fr";
+const siteTitle = "KERN | Stratégie immobilière, faisabilité & valorisation";
 const siteDescription =
-  "Étude de faisabilité, optimisation de projets, transformation d'actifs et accompagnement réglementaire jusqu'au permis.";
+  "KERN accompagne particuliers et professionnels dans l'étude de faisabilité, la valorisation foncière, la transformation d'actifs et la sécurisation de projets immobiliers.";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
-    default: `${siteName} — Conseil & valorisation foncière`,
+    default: siteTitle,
     template: `%s — ${siteName}`,
   },
   description: siteDescription,
+  alternates: {
+    canonical: siteUrl,
+  },
   openGraph: {
-    title: `${siteName} — Conseil & valorisation foncière`,
+    title: siteTitle,
     description: siteDescription,
+    url: siteUrl,
     siteName,
     locale: "fr_FR",
     type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: siteTitle,
+    description: siteDescription,
   },
   robots: {
     index: true,
