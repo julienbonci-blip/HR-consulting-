@@ -3,6 +3,7 @@ import { Geist } from "next/font/google";
 import { Archivo } from "next/font/google";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { AnalyticsConsent } from "@/components/analytics/analytics-consent";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -61,6 +62,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />
+        <AnalyticsConsent />
       </body>
     </html>
   );

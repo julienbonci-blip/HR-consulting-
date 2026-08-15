@@ -27,6 +27,7 @@ import {
   PRO_TYPES,
   type ProjectFormState,
 } from "./options";
+import { trackEvent } from "@/lib/gtag";
 
 const STEP_LABELS = ["Profil", "Projet", "Besoin", "Coordonnées"];
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -153,6 +154,7 @@ export function ProjectForm() {
         return;
       }
 
+      trackEvent("generate_lead", { lead_type: data.profile });
       setStatus("success");
     } catch {
       setServerError(
