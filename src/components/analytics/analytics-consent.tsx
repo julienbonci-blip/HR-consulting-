@@ -1,12 +1,12 @@
 "use client";
 
-import { useEffect, useSyncExternalStore } from "react";
+import { useEffect, useRef, useSyncExternalStore } from "react";
 import Script from "next/script";
 import { usePathname } from "next/navigation";
 import {
   GA_MEASUREMENT_ID,
   getStoredConsent,
-  pushToDataLayer,
+  initGtag,
   storeConsent,
   type ConsentValue,
 } from "@/lib/gtag";
@@ -29,17 +29,26 @@ function getServerSnapshot(): ConsentValue | null {
 export function AnalyticsConsent() {
   const consent = useSyncExternalStore(subscribe, getStoredConsent, getServerSnapshot);
   const pathname = usePathname();
+  const configuredRef = useRef(false);
+  const lastTrackedPathRef = useRef<string | null>(null);
 
+  // Fires once per mount, when consent first becomes "granted" (fresh accept or already-accepted reload).
   useEffect(() => {
-    if (consent !== "granted") return;
-    pushToDataLayer("js", new Date());
-    pushToDataLayer("config", GA_MEASUREMENT_ID, { send_page_view: false });
+    if (consent !== "granted" || configuredRef.current) return;
+    configuredRef.current = true;
+    initGtag();
+    window.gtag("js", new Date());
+    window.gtag("consent", "update", { analytics_storage: "granted" });
+    window.gtag("config", GA_MEASUREMENT_ID, { send_page_view: false });
   }, [consent]);
 
+  // Sends page_view on activation and on every subsequent route change, never twice for the same path.
   useEffect(() => {
-    if (consent !== "granted") return;
-    pushToDataLayer("event", "page_view", { page_path: pathname });
-  }, [pathname, consent]);
+    if (!configuredRef.current) return;
+    if (lastTrackedPathRef.current === pathname) return;
+    lastTrackedPathRef.current = pathname;
+    window.gtag("event", "page_view", { page_path: pathname });
+  }, [consent, pathname]);
 
   const choose = (value: ConsentValue) => {
     storeConsent(value);

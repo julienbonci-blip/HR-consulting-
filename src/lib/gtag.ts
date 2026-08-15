@@ -6,13 +6,18 @@ export type ConsentValue = "granted" | "denied";
 declare global {
   interface Window {
     dataLayer: unknown[];
+    gtag: (...args: unknown[]) => void;
   }
 }
 
-export function pushToDataLayer(...args: unknown[]) {
+export function initGtag() {
   if (typeof window === "undefined") return;
   window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push(args);
+  if (typeof window.gtag !== "function") {
+    window.gtag = function gtag(...args: unknown[]) {
+      window.dataLayer.push(args);
+    };
+  }
 }
 
 export function getStoredConsent(): ConsentValue | null {
@@ -26,7 +31,19 @@ export function storeConsent(value: ConsentValue) {
   window.localStorage.setItem(CONSENT_STORAGE_KEY, value);
 }
 
+function waitForGtag(callback: () => void, attempt = 0) {
+  if (typeof window === "undefined") return;
+  if (typeof window.gtag === "function") {
+    callback();
+    return;
+  }
+  if (attempt >= 50) return;
+  window.setTimeout(() => waitForGtag(callback, attempt + 1), 100);
+}
+
 export function trackEvent(name: string, params?: Record<string, string>) {
   if (getStoredConsent() !== "granted") return;
-  pushToDataLayer("event", name, params);
+  waitForGtag(() => {
+    window.gtag("event", name, params);
+  });
 }
