@@ -12,7 +12,7 @@ export function Hero() {
           </div>
 
           <h1 className="mt-6 max-w-[15ch] font-display text-[44px] font-extrabold leading-[0.98] tracking-[-0.045em] text-ink sm:text-[64px] lg:text-[76px]">
-            Créer de la valeur avant le premier coup de pioche
+            Transformer un potentiel en projet durable.
           </h1>
 
           <p className="mt-7 max-w-[46ch] text-[17px] leading-relaxed text-ink-soft sm:text-lg">
