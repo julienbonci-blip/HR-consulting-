@@ -8,7 +8,7 @@ import {
 export const runtime = "nodejs";
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const FROM_EMAIL = "KERN <onboarding@resend.dev>";
+const FROM_EMAIL = "KERN <notifications@kernstrategieimmo.fr>";
 
 function escapeHtml(value: string): string {
   return value
