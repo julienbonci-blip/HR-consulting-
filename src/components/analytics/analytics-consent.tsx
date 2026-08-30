@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import {
   GA_MEASUREMENT_ID,
   getStoredConsent,
+  initConsentDefault,
   initGtag,
   storeConsent,
   type ConsentValue,
@@ -32,14 +33,22 @@ export function AnalyticsConsent() {
   const configuredRef = useRef(false);
   const lastTrackedPathRef = useRef<string | null>(null);
 
+  // Establishes an explicit Consent Mode default on every mount, before any
+  // script loads or user choice is made. Local-only, sends no network hit.
+  useEffect(() => {
+    initConsentDefault();
+  }, []);
+
   // Fires once per mount, when consent first becomes "granted" (fresh accept or already-accepted reload).
   useEffect(() => {
     if (consent !== "granted" || configuredRef.current) return;
     configuredRef.current = true;
+    console.log("[KERN GA4] consent granted");
     initGtag();
     window.gtag("js", new Date());
     window.gtag("consent", "update", { analytics_storage: "granted" });
     window.gtag("config", GA_MEASUREMENT_ID, { send_page_view: false });
+    console.log("[KERN GA4] config sent");
   }, [consent]);
 
   // Sends page_view on activation and on every subsequent route change, never twice for the same path.
@@ -48,6 +57,7 @@ export function AnalyticsConsent() {
     if (lastTrackedPathRef.current === pathname) return;
     lastTrackedPathRef.current = pathname;
     window.gtag("event", "page_view", { page_path: pathname });
+    console.log("[KERN GA4] page_view sent");
   }, [consent, pathname]);
 
   const choose = (value: ConsentValue) => {
@@ -61,6 +71,7 @@ export function AnalyticsConsent() {
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
           strategy="afterInteractive"
+          onLoad={() => console.log("[KERN GA4] gtag loaded")}
         />
       )}
 
