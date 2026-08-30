@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import {
   CheckboxOptionGroup,
   FieldError,
@@ -87,6 +88,7 @@ function validateStep(step: number, data: ProjectFormState): Errors {
 }
 
 export function ProjectForm() {
+  const router = useRouter();
   const [step, setStep] = useState(0);
   const [data, setData] = useState<ProjectFormState>(INITIAL_FORM_STATE);
   const [touchedSteps, setTouchedSteps] = useState<Record<number, boolean>>({});
@@ -155,10 +157,7 @@ export function ProjectForm() {
       }
 
       trackEvent("generate_lead", { lead_type: data.profile });
-      window.gtag?.("event", "conversion", {
-        send_to: "AW-828310409/dyuwCOrG2uocEImH_IoD",
-      });
-      setStatus("success");
+      router.push("/merci");
     } catch {
       setServerError(
         "Une erreur est survenue lors de l'envoi. Merci de vérifier votre connexion et réessayer."
