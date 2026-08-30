@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 import {
   GA_MEASUREMENT_ID,
   getStoredConsent,
-  initConsentDefault,
   initGtag,
   storeConsent,
   type ConsentValue,
@@ -32,12 +31,6 @@ export function AnalyticsConsent() {
   const pathname = usePathname();
   const configuredRef = useRef(false);
   const lastTrackedPathRef = useRef<string | null>(null);
-
-  // Establishes an explicit Consent Mode default on every mount, before any
-  // script loads or user choice is made. Local-only, sends no network hit.
-  useEffect(() => {
-    initConsentDefault();
-  }, []);
 
   // Fires once per mount, when consent first becomes "granted" (fresh accept or already-accepted reload).
   useEffect(() => {
