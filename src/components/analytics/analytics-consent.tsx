@@ -46,7 +46,12 @@ export function AnalyticsConsent() {
     console.log("[KERN GA4] consent granted");
     initGtag();
     window.gtag("js", new Date());
-    window.gtag("consent", "update", { analytics_storage: "granted" });
+    window.gtag("consent", "update", {
+      analytics_storage: "granted",
+      ad_storage: "granted",
+      ad_user_data: "granted",
+      ad_personalization: "granted",
+    });
     window.gtag("config", GA_MEASUREMENT_ID, { send_page_view: false });
     console.log("[KERN GA4] config sent");
   }, [consent]);
@@ -69,7 +74,12 @@ export function AnalyticsConsent() {
     console.log("[KERN GA4] gtag loaded");
     if (consent !== "granted") return;
     // Reconfigure GA4 now that the real gtag.js script is loaded
-    window.gtag("consent", "update", { analytics_storage: "granted" });
+    window.gtag("consent", "update", {
+      analytics_storage: "granted",
+      ad_storage: "granted",
+      ad_user_data: "granted",
+      ad_personalization: "granted",
+    });
     window.gtag("config", GA_MEASUREMENT_ID, { send_page_view: false });
     console.log("[KERN GA4] config confirmed after script load");
     // Send page_view after real script is loaded
