@@ -21,17 +21,16 @@ export function initGtag() {
 }
 
 // Establishes an explicit Consent Mode baseline on every page load, before
-// gtag.js is ever fetched. Without this, the initial analytics_storage
-// state is left to Google's own implicit/region defaults instead of ours,
-// which can keep hits held back even after we later send consent update.
+// gtag.js is ever fetched. Scoped to analytics_storage only, since that is
+// the sole consent type this site's banner actually asks about and grants
+// — declaring default "denied" for ad_storage/ad_user_data/ad_personalization
+// here would leave those permanently denied with no corresponding UI to
+// ever grant them, which can suppress hit delivery for no reason.
 export function initConsentDefault() {
   if (typeof window === "undefined") return;
   initGtag();
   window.gtag("consent", "default", {
     analytics_storage: "denied",
-    ad_storage: "denied",
-    ad_user_data: "denied",
-    ad_personalization: "denied",
   });
 }
 
