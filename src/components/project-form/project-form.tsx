@@ -155,6 +155,7 @@ export function ProjectForm() {
       }
 
       trackEvent("generate_lead", { lead_type: data.profile });
+      trackEvent("conversion", { send_to: "AW-828310409/dyuwCOrG2uocEImH_IoD" });
       setStatus("success");
     } catch {
       setServerError(
