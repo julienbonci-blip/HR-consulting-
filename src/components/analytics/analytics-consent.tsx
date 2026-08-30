@@ -65,13 +65,28 @@ export function AnalyticsConsent() {
     window.dispatchEvent(new Event(CONSENT_CHANGE_EVENT));
   };
 
+  const handleScriptLoad = () => {
+    console.log("[KERN GA4] gtag loaded");
+    if (consent !== "granted") return;
+    // Reconfigure GA4 now that the real gtag.js script is loaded
+    window.gtag("consent", "update", { analytics_storage: "granted" });
+    window.gtag("config", GA_MEASUREMENT_ID, { send_page_view: false });
+    console.log("[KERN GA4] config confirmed after script load");
+    // Send page_view after real script is loaded
+    if (lastTrackedPathRef.current !== pathname) {
+      lastTrackedPathRef.current = pathname;
+      window.gtag("event", "page_view", { page_path: pathname });
+      console.log("[KERN GA4] page_view sent after script load");
+    }
+  };
+
   return (
     <>
       {consent === "granted" && (
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
           strategy="afterInteractive"
-          onLoad={() => console.log("[KERN GA4] gtag loaded")}
+          onLoad={handleScriptLoad}
         />
       )}
 
