@@ -28,7 +28,7 @@ import {
   PRO_TYPES,
   type ProjectFormState,
 } from "./options";
-import { trackEvent } from "@/lib/gtag";
+import { LEAD_SUBMITTED_STORAGE_KEY, trackEvent } from "@/lib/gtag";
 
 const STEP_LABELS = ["Profil", "Projet", "Besoin", "Coordonnées"];
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -157,6 +157,7 @@ export function ProjectForm() {
       }
 
       trackEvent("generate_lead", { lead_type: data.profile });
+      window.sessionStorage.setItem(LEAD_SUBMITTED_STORAGE_KEY, "true");
       router.push("/merci");
     } catch {
       setServerError(

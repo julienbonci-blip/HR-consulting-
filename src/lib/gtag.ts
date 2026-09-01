@@ -1,5 +1,7 @@
 export const GA_MEASUREMENT_ID = "G-CFD73EPN9M";
 export const CONSENT_STORAGE_KEY = "kern-analytics-consent";
+export const LEAD_SUBMITTED_STORAGE_KEY = "kern_lead_submitted";
+export const GOOGLE_ADS_LEAD_CONVERSION = "AW-828310409/dyuwCOrG2uocEImH_IoD";
 
 export type ConsentValue = "granted" | "denied";
 

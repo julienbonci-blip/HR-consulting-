@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { LeadConversion } from "@/components/analytics/lead-conversion";
 
 export const metadata: Metadata = {
   title: "Merci",
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
 export default function MerciPage() {
   return (
     <section className="bg-paper">
+      <LeadConversion />
       <div className="mx-auto max-w-[620px] px-6 py-24 text-center sm:px-10">
         <h1 className="font-display text-[28px] font-extrabold leading-[1.1] tracking-[-0.02em] text-ink sm:text-4xl">
           Merci, votre demande a bien été envoyée.
